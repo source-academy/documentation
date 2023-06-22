@@ -5,6 +5,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const { isSelfClosingTag } = require("./utils/constants");
+const { getModuleNames } = require("./utils/modules");
 
 let visit;
 import("unist-util-visit").then((module) => {
@@ -76,6 +77,31 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        // TypeDoc options - adapted from
+        // https://github.com/source-academy/modules/tree/master/scripts/bin/build/docs/docUtils.js
+        // categorizeByGroup: true,
+        entryPoints: getModuleNames().map(
+          (name) => `submodules/modules/src/bundles/${name}/index.ts`
+        ),
+        excludeInternal: false,
+        name: "Source Academy Modules",
+        readme: "submodules/modules/README.md",
+        skipErrorChecking: true,
+
+        // Plugin options
+        out: "modules",
+        sidebar: {
+          categoryLabel: "Modules",
+          fullNames: true,
+        },
+      },
     ],
   ],
 
