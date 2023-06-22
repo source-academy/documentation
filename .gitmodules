@@ -1,0 +1,3 @@
+[submodule "submodules/modules"]
+	path = submodules/modules
+	url = https://github.com/source-academy/modules.git
