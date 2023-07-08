@@ -4,6 +4,14 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+const { isSelfClosingTag } = require("./utils/constants");
+const { getModuleNames } = require("./utils/modules");
+
+let visit;
+import("unist-util-visit").then((module) => {
+  visit = module.visit;
+});
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Source Academy Documentation",
@@ -42,6 +50,21 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/source-academy/documentation/",
+          beforeDefaultRehypePlugins: [
+            () => async (hast) => {
+              visit(hast, (node) => {
+                if (node.type == "jsx") {
+                  // If it is an HTML self closing tag, ensure that it ends with "/>"
+                  // to make it valid JSX. This is because Docuaurus parses both
+                  // .md and .mdx files as MDX.
+                  const val = node.value;
+                  if (isSelfClosingTag(val) && !val.endsWith("/>")) {
+                    node.value = val.replace(">", "/>");
+                  }
+                }
+              });
+            },
+          ],
         },
         blog: false,
         // blog: {
@@ -54,6 +77,31 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        // TypeDoc options - adapted from
+        // https://github.com/source-academy/modules/tree/master/scripts/bin/build/docs/docUtils.js
+        // categorizeByGroup: true,
+        entryPoints: getModuleNames().map(
+          (name) => `submodules/modules/src/bundles/${name}/index.ts`
+        ),
+        excludeInternal: false,
+        name: "Source Academy Modules",
+        readme: "submodules/modules/README.md",
+        skipErrorChecking: true,
+
+        // Plugin options
+        out: "modules",
+        sidebar: {
+          categoryLabel: "Modules",
+          fullNames: true,
+        },
+      },
     ],
   ],
 
