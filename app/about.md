@@ -1,7 +1,3 @@
----
-title: About
----
-
 > _The following page is taken from the [general](https://about.sourceacademy.org/) documentation._
 
 # About Source Academy

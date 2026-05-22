@@ -13,7 +13,7 @@ Pieces of work that are to be submitted by students and the can be graded are ca
 Instructors can specify assessments in an XML format that is documented in this page. They upload assessment files using the "Ground Control" feature of the Source Academy frontend.
 
 Your Source Academy deployment comes with an authoring tool for assessments. Visit
-https://your-source-academy-url/mission-control
+<https://your-source-academy-url/mission-control>
 to access the tool. This page describes the XML format, in case you want to or need to manually edit the assessment XML files.
 
 ## General XML file format
@@ -38,8 +38,8 @@ You may assume that each element must be unique (i.e. only one exists per parent
     - [PROBLEM][def]
       - [LLM_GRADING_PROMPT](#llm_grading_prompt)
       - [programming](#programming)
-      	- [TEXT](#text)
-       	- [SNIPPET](#snippet)
+        - [TEXT](#text)
+          - [SNIPPET](#snippet)
           - [PREPEND](#prepend)
           - [TEMPLATE](#template)
           - [POSTPEND](#postpend)
@@ -49,15 +49,15 @@ You may assume that each element must be unique (i.e. only one exists per parent
             - [SECRET](#secret)
         - [SOLUTION](#solution)
       - [mcq](#mcq)
-      	- [TEXT](#text)
-      	- [CHOICE](#choice)
+        - [TEXT](#text)
+        - [CHOICE](#choice)
       - [voting](#voting)
-      	- [TEXT](#text)
-      	- [VOTING](#voting)
-      	- [SNIPPET](#snippet)
+        - [TEXT](#text)
+        - [VOTING](#voting)
+        - [SNIPPET](#snippet)
           - [PREPEND](#prepend)
           - [TEMPLATE](#template)
-      
+
   - [DEPLOYMENT](#deployment) / [GRADERDEPLOYMENT](#graderdeployment)
     - [IMPORT](#import)
       - [SYMBOL](#symbol)
@@ -66,6 +66,7 @@ You may assume that each element must be unique (i.e. only one exists per parent
     - [GLOBAL](#global)
       - [IDENTIFIER](#identifier)
       - [VALUE](#value)
+
 - [EXAMPLE ASSESSMENTS XML](#example-assessments-xml)
 
 ## TASK
@@ -76,7 +77,7 @@ Represents an assessment. **Required**.
 
 | attribute  | details                                                                                                                  |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
-| coverimage | The thumbnail to show for this assessment. Must be a URL, i.e. not a file path. e.g. "https://http.cat/200". Optional.   |
+| coverimage | The thumbnail to show for this assessment. Must be a URL, i.e. not a file path. e.g. "<https://http.cat/200>". Optional. |
 | number     | The string identifier the relative position of this assessment. Must be unique among assessments.                        |
 | title      | The title of this assessment.                                                                                            |
 | story      | The story XML to load. Must correspond to the filename of a story XML file, e.g. "mission-2", "sidequest-2.1". Optional. |
@@ -184,14 +185,15 @@ steps(rcross_bb, sail_bb, corner_bb, nova_bb);
 ![](http://via.placeholder.com/350x150)
 </TEXT>
 ````
+
 ## LLM_GRADING_PROMPT
 
-Represents the instructions provided to GPT for grading. It guides GPT on how to evaluate and assess the student's solution accurately. Optional for both task and problem. 
+Represents the instructions provided to GPT for grading. It guides GPT on how to evaluate and assess the student's solution accurately. Optional for both task and problem.
 
 ### Value
 
 - As a child of [TASK](#task) the LLM_GRADING_PROMPT element is used to provide instructions to GPT on how to grade the assessment.
-- As a child of [PROBLEM][def] the LLM_GRADING_PROMPT element is used to provide instructions to GPT on how to grade the question. 
+- As a child of [PROBLEM][def] the LLM_GRADING_PROMPT element is used to provide instructions to GPT on how to grade the question.
 
 ## PROBLEMS
 
@@ -219,22 +221,27 @@ Required: at least one PROBLEM in the PROBLEMS element.
 
 ### Attributes
 
-| attribute    | details                                                                                                                          |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| maxxp        | The maximum xp achievable for thie PROBLEM. XP earned by students will be proportional to the grade as graded by the autograder. |
-| type         | The type of this question. Can be "programming", "mcq" or "voting".                                                              |
+| attribute    | details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| maxxp        | The maximum xp achievable for thie PROBLEM. XP earned by students will be proportional to the grade as graded by the autograder.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| type         | The type of this question. Can be "programming", "mcq" or "voting".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | showsolution | Default false; If value is string "true", the solution string is shipped to web client. <br><sub> In a PROBLEM of type "mcq', the solution is used on the frontend to determine if the student's answer is correct (and to provide immediate visual feedback to the student by highlighting the selection green or red). This can be used together with the attribute `blocking` to ensure students answer MCQ questions correctly before proceeding to the next question. In the event `showsolution` is "false" and `blocking` is "true", the frontend is unable to verify the student's MCQ answer, and will allow him/ her to proceed after making any selection.</sub> <br><sub> In a PROBLEM of type "programming", the solution string, if sent, is currently NOT displayed to the student on the frontend. However, this might be subject to changes in the future, and the documentation will be updated accordingly here. Do note that more astute students might open the browser's network tab to view the solution string directly if it is sent. </sub> |
-| blocking     | Default false; If value is string "true", the question is blocking; must be answered correctly to proceed to next question       |
+| blocking     | Default false; If value is string "true", the question is blocking; must be answered correctly to proceed to next question                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ### Children
 
 [TEXT](#text), - [LLM_GRADING_PROMPT](#llm_grading_prompt), [SNIPPET](#snippet), [CHOICE](#choice), [VOTING](#voting), [DEPLOYMENT](#deployment), [GRADERDEPLOYMENT](#graderdeployment)
 
 #### programming
+
 [TEXT](#text), [SNIPPET](#snippet), [DEPLOYMENT](#deployment), [GRADERDEPLOYMENT](#graderdeployment)
+
 #### mcq
+
 [TEXT](#text), [CHOICE](#choice)
+
 #### voting
+
 [TEXT](#text), [SNIPPET](#snippet), [VOTING](#voting), [DEPLOYMENT](#deployment), [GRADERDEPLOYMENT](#graderdeployment)
 
 ### Example
@@ -285,10 +292,10 @@ Represents the configuration in a [PROBLEM][def] of type "voting". Required for 
 
 ### Attributes
 
-| attribute | details                                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------------------- |
-| assessment_number | The assessment number that refers to the contest assessment for this voting assessment |
-| reveal_hours | The number of hours after the assessment close time before the leaderboard reveals for students <br><sub>staff and admin can always see the leaderboard.</sub>|
+| attribute         | details                                                                                                                                                        |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| assessment_number | The assessment number that refers to the contest assessment for this voting assessment                                                                         |
+| reveal_hours      | The number of hours after the assessment close time before the leaderboard reveals for students <br><sub>staff and admin can always see the leaderboard.</sub> |
 
 ### Example
 
@@ -300,7 +307,7 @@ Represents the configuration in a [PROBLEM][def] of type "voting". Required for 
 
 Represents snippets of source programs in a [PROBLEM][def] of type "programming". Required for PROBLEM elements of type "programming".
 
-In a [PROBLEM][def] of type "voting", valid children are [PREPEND](#prepend) and [TEMPLATE](#template). Optional for PROBLEM elements of type "voting". 
+In a [PROBLEM][def] of type "voting", valid children are [PREPEND](#prepend) and [TEMPLATE](#template). Optional for PROBLEM elements of type "voting".
 
 ### Children
 
@@ -780,9 +787,9 @@ sort(numbers); // should be [1, 3, 5, 7]
         </DEPLOYMENT>
         <GRADERDEPLOYMENT interpreter="2">
           <GLOBAL>
-	    <IDENTIFIER>show</IDENTIFIER>
-	      <VALUE>x => x;</VALUE>
-	  </GLOBAL>
+     <IDENTIFIER>show</IDENTIFIER>
+       <VALUE>x => x;</VALUE>
+   </GLOBAL>
         </GRADERDEPLOYMENT>
       </PROBLEM>
 
@@ -844,6 +851,5 @@ This TEXT will not be shown in cadet, but may be useful in the generated pdf.
 </TASK>
 </CONTENT>
 ```
-
 
 [def]: #problem
