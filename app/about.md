@@ -6,9 +6,9 @@ The Source Academy is a community of learners who use the book [_Structure and I
 
 To get an idea of the system and community, watch the videos of our
 
-* [SIGCSE TS 2023 Source Academy demo](https://www.youtube.com/watch?v=s_UPhAT25fo) and
-* [SIGCSE TS 2023 paper presentation](https://www.youtube.com/watch?v=herwKTpNeDE).
+- [SIGCSE TS 2023 Source Academy demo](https://www.youtube.com/watch?v=s_UPhAT25fo) and
+- [SIGCSE TS 2023 paper presentation](https://www.youtube.com/watch?v=herwKTpNeDE).
 
------------------
+---
 
 Our mission is to _expose the beauty and fun in computational thinking, and make them universally accessible_.
