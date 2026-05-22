@@ -1,0 +1,24 @@
+{
+  "name": "@sourceacademy/documentation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "format": "prettier ."
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "yarn@4.15.0+sha512.07ec708ac11e2eaa4ea2b04cfbb272812f7e74a753f1595eaef4486c663a98306a30cca3e6fc40f7a0b168dcfb3a2490b6a5e0501e20fb69cc36f563dd161c53",
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "oxc-minify": "^0.131.0",
+    "prettier": "^3.8.1",
+    "typescript": "^6.0.2",
+    "vitepress": "2.0.0-alpha.17",
+    "vue": "^3.5.30"
+  }
+}
