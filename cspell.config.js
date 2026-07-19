@@ -32,7 +32,6 @@ export default defineConfig({
     "markdownlint",
     "maxxp",
     "minimise",
-    "postegresql",
     "postdeclared",
     "postpend",
     "POSTPEND",

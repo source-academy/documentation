@@ -109,7 +109,7 @@ Example
 
 ## PASSWORD
 
-Only applies to "private" assessments. Please choose a strong a complex password. If no password is given, an empty string (`""`) will be used.
+Only applies to "private" assessments. Please choose a strong and complex password. If no password is given, an empty string (`""`) will be used.
 
 ### Value
 

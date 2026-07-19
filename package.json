@@ -8,7 +8,7 @@
     "build": "vitepress build",
     "preview": "vitepress preview",
     "format": "prettier . --write",
-    "lint:spell": "cspell \"**/*.{md,mdx,json,jsonc}\" --no-progress"
+    "lint:spell": "cspell --no-progress"
   },
   "engines": {
     "node": ">=24"
