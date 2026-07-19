@@ -1,24 +1,27 @@
-{
-  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "version": "0.2",
-  "language": "en",
-  "files": [
+// @ts-check
+
+import { defineConfig } from "cspell";
+
+export default defineConfig({
+  version: "0.2",
+  language: "en",
+  files: [
     "app/**/*.{md,mdx,json,jsonc}",
     "README.md",
     "plans/**/*.md",
-    "archive/**/*.md"
+    "archive/**/*.md",
   ],
-  "ignorePaths": [
+  ignorePaths: [
     "node_modules",
     "dist",
     ".vitepress/cache",
     ".vitepress/dist",
     ".yarn",
     "yarn.lock",
-    "package.json"
+    "package.json",
   ],
-  "dictionaries": ["softwareTerms", "companies", "misc", "filetypes"],
-  "words": [
+  dictionaries: ["softwareTerms", "companies", "misc", "filetypes"],
+  words: [
     "autograder",
     "autograding",
     "Centralised",
@@ -45,12 +48,12 @@
     "sourcereel",
     "utilise",
     "vitepress",
-    "WEBSUMMARY"
+    "WEBSUMMARY",
   ],
-  "patterns": [
+  patterns: [
     {
-      "name": "course-codes",
-      "pattern": "/\\bCS\\d{4}[A-Z]?\\b/g"
-    }
-  ]
-}
+      name: "course-codes",
+      pattern: "/\\bCS\\d{4}[A-Z]?\\b/g",
+    },
+  ],
+});
