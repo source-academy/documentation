@@ -1,44 +1,33 @@
-<!-- markdownlint-disable-file header-increment -->
 # Source Academy Documentation
 
-> Centralised documentation for Source Academy.
+> Centralised documentation for Source Academy, built with [VitePress](https://vitepress.dev/).
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
-
-### Installation
+## Quick Start
 
 ```bash
+# Install dependencies
 yarn
-```
 
-### Local Development
+# Start dev server
+yarn dev
 
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```bash
+# Build for production
 yarn build
+
+# Preview production build
+yarn preview
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Documentation
 
-### Deployment
+- [VitePress Documentation](https://vitepress.dev/) - Official VitePress docs
+- [Default Theme Config](https://vitepress.dev/reference/default-theme-config) - Theme configuration reference
 
-Using SSH:
+## Scripts
 
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+| Command        | Description               |
+| -------------- | ------------------------- |
+| `yarn dev`     | Start development server  |
+| `yarn build`   | Build for production      |
+| `yarn preview` | Preview production build  |
+| `yarn format`  | Format code with Prettier |

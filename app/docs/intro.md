@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Start Here
 
 This document shows you how to navigate this site.
@@ -11,6 +7,7 @@ This document shows you how to navigate this site.
 :::info
 
 <!-- TODO: -->
+
 _**Coming Soon!**_
 
 :::

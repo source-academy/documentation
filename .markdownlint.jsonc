@@ -1,9 +1,10 @@
 {
+  "$schema": "https://www.schemastore.org/markdownlint.json",
   "line-length": false,
   "single-h1": {
     "level": 1,
     // Allow a separate "title" property in the front matter
     // The "title" property is used for the HTML page title
-    "front_matter_title": ""
-  }
+    "front_matter_title": "",
+  },
 }
