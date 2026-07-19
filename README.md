@@ -25,9 +25,10 @@ yarn preview
 
 ## Scripts
 
-| Command        | Description               |
-| -------------- | ------------------------- |
-| `yarn dev`     | Start development server  |
-| `yarn build`   | Build for production      |
-| `yarn preview` | Preview production build  |
-| `yarn format`  | Format code with Prettier |
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `yarn dev`        | Start development server     |
+| `yarn build`      | Build for production         |
+| `yarn preview`    | Preview production build     |
+| `yarn format`     | Format code with Prettier    |
+| `yarn lint:spell` | Spell check docs with cspell |
