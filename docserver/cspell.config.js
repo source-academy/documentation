@@ -6,7 +6,7 @@ export default defineConfig({
   version: "0.2",
   language: "en",
   files: [
-    "app/**/*.{md,mdx,json,jsonc}",
+    "src/**/*.{md,mdx,json,jsonc}",
     "README.md",
     "plans/**/*.md",
     "archive/**/*.md",
