@@ -5,11 +5,10 @@
 !.vscode/settings.json
 
 # Dependencies
-/node_modules
+node_modules
 
 # Production
-/build
-/dist
+dist
 
 # Generated files
 .docusaurus

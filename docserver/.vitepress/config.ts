@@ -6,7 +6,7 @@ export default defineConfig({
 
   lang: "en-US",
   cleanUrls: true,
-  srcDir: "app",
+  srcDir: "src",
   outDir: "dist",
 
   head: [

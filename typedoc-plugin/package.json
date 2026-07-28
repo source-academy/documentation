@@ -1,0 +1,37 @@
+{
+  "name": "@sourceacademy/typedoc-plugin",
+  "version": "1.0.0",
+  "description": "Typedoc Plugin for generating documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/source-academy/documentation",
+    "directory": "typedoc-plugin"
+  },
+  "type": "module",
+  "dependencies": {
+    "acorn": "^8.9.0",
+    "acorn-typescript": "^1.4.13"
+  },
+  "devDependencies": {
+    "@sourceacademy/documentation-types": "workspace:^",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.1",
+    "typedoc": "^0.28.18",
+    "typescript": "catalog:",
+    "vitest": "^4.1.10"
+  },
+  "peerDependencies": {
+    "typedoc": "^0.28.18"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "esbuild --bundle src/index.ts --outfile=./dist/index.js --external:typedoc --platform=node --packages=bundle --format=esm --tsconfig=./tsconfig.json",
+    "test": "vitest --config vitest.config.ts",
+    "postinstall": "yarn build"
+  }
+}

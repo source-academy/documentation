@@ -1,34 +1,10 @@
-# Source Academy Documentation
+# Source Academy Documentation Repo
 
-> Centralised documentation for Source Academy, built with [VitePress](https://vitepress.dev/).
+This repository contains packages related to the Source Academy documentation pipeline.
 
-## Quick Start
+The `docserver` folder contains the Vitepress server that powers Source Academy docs.
 
-```bash
-# Install dependencies
-yarn
+The `typedoc-plugin` folder contains the Typedoc plugin that can be used to generate Typedoc based documentation that
+can then be used for things like autocomplete.
 
-# Start dev server
-yarn dev
-
-# Build for production
-yarn build
-
-# Preview production build
-yarn preview
-```
-
-## Documentation
-
-- [VitePress Documentation](https://vitepress.dev/) - Official VitePress docs
-- [Default Theme Config](https://vitepress.dev/reference/default-theme-config) - Theme configuration reference
-
-## Scripts
-
-| Command           | Description                  |
-| ----------------- | ---------------------------- |
-| `yarn dev`        | Start development server     |
-| `yarn build`      | Build for production         |
-| `yarn preview`    | Preview production build     |
-| `yarn format`     | Format code with Prettier    |
-| `yarn lint:spell` | Spell check docs with cspell |
+The `doc-types` folder contains the Typescript types for documentation entries.

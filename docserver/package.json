@@ -1,0 +1,20 @@
+{
+  "name": "@sourceacademy/docserver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "format": "prettier . --write",
+    "lint:spell": "cspell --no-progress"
+  },
+  "devDependencies": {
+    "cspell": "^10.0.1",
+    "prettier": "^3.8.1",
+    "typescript": "catalog:",
+    "vitepress": "2.0.0-alpha.17",
+    "vue": "^3.5.30"
+  }
+}
