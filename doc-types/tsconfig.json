@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "verbatimModuleSyntax": true
+  },
+  "files": [
+    "types.d.ts"
+  ]
+}

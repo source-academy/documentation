@@ -1,0 +1,15 @@
+{
+  "name": "@sourceacademy/documentation-types",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "types": [
+        "./types.d.ts"
+      ]
+    }
+  }
+}
