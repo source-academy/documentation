@@ -1,6 +1,10 @@
 {
   "name": "@sourceacademy/documentation",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/source-academy/documentation"
+  },
   "type": "module",
   "engines": {
     "node": ">=24"

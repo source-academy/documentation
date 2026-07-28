@@ -2,6 +2,11 @@
   "name": "@sourceacademy/typedoc-plugin",
   "version": "1.0.0",
   "description": "Typedoc Plugin for generating documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/source-academy/documentation",
+    "directory": "typedoc-plugin"
+  },
   "type": "module",
   "dependencies": {
     "acorn": "^8.9.0",
